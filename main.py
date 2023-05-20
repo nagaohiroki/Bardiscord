@@ -1,4 +1,4 @@
-import os
+﻿import os
 import discord
 import Bard
 
@@ -20,7 +20,8 @@ async def on_message(message):
     if message.channel.name != 'ai':
         if client.user not in message.mentions:
             return
-    ask = bard_bot.ask(message.content)
+    content = f'{message.author.name}:{message.content}'
+    ask = bard_bot.ask(content)
     await message.channel.send(ask['content'])
 
 
