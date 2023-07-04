@@ -1,11 +1,12 @@
 ﻿import os
 import discord
 import Bard
+import nest_asyncio
+nest_asyncio.apply()
 
-
+bard_bot = Bard.Chatbot(os.environ['BARD_TOKEN'])
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
-bard_bot : Bard.Chatbot = Bard.Chatbot(os.environ['BARD_TOKEN'])
 
 
 @client.event
